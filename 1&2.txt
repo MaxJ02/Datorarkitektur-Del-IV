@@ -1,0 +1,50 @@
+1. Förklara vad som sker gällande stacken samt programräknaren vid instruktioner CALL och RET, som används för anrop
+samt återhopp från subrutiner. Förklara med begrepp såsom stackpekare, PUSH och POP samt demonstrera via
+motsvarande pseudokod i C.
+
+
+När instruktionen CALL anropas, , sparas den nuvarande programräknaren på stacken för att sen kunna återvända till 
+rätt plats efter att subrutinen har exekverats. För att göra detta används stackpekaren, som är en variabel som pekar på 
+det högsta tillgängliga utrymmet på stacken. PUSH-instruktionen används för att lägga till data på stacken, 
+genom att först sänka stackpekaren och sedan lagra data på den nya positionen. I detta fallet behandlar vi en CALL-instruktion, 
+vilket leder till att den nuvarande programräknaren "pushas" på stacken.
+
+När subrutinen avslutats används RET-instruktionen för att återvända till där CALL-instruktionen utfördes. 
+Detta sker genom att använda POP-instruktionen, som tar bort det översta värdet på stacken och flyttar stackpekaren tillbaka uppåt. 
+Nu behandlar vi istället en RET-instruktion, så därmed poppas programräknaren från stacken och används för att återgå till rätt plats i programmet.
+
+Pseudokod i C:
+
+void exempelsubrutin(void)
+{
+    //Kod kod kod kod
+    return; // Återvänd till CALL-instruktionen
+}
+
+int main(void)
+{
+    push(programräknare); // Spara nuvarande programräknare på stacken
+    examplesubrutin(); // Anropa subrutinen med CALL-instruktionen
+    pop(programräknare); // Återställ programräknare från stacken med RET-instruktionen
+    return 0;
+}
+
+
+
+
+2. Ett flertal aritmetiska operationer ska genomföras med en 8-bitars ALU. Beräkna resultat och ange statusbitar SNZVC efter
+följande aritmetiska operationer. Visa samtliga uträkningar på binär form och visa hur du erhöll statusbitarna.
+
+a) 126 + 1
+
+ 01111110  (126)
++ 00000001 (1)
+= 01111111 (127)
+
+SNZVC = 0000
+
+b) 126 + 2
+c) -90 - 30
+d) -90 - 40
+e) -5 +13
+f) -5 - 13  
