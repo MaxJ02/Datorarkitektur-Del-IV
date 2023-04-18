@@ -41,9 +41,18 @@ a) 126 + 1
 + 00000001 (1)
 = 01111111 (127)
 
-SNZVC = 0000
+S (Sign): Den här statusbiten sätts till 1 om den mest signifikanta biten i resultatet är en 1a, vilket indikerar att resultatet är negativt. Eftersom den mest                   signifikanta biten i 0111 1111 är 0, är S = 0.
+N (Negative): N sätts till värdet av S. I detta fallet är N = 0.
+Z (Zero): Denna statusbit sätts till 1 om resultatet är noll. Eftersom resultatet inte är noll, är Z = 0.
+V (Overflow): V sätts till 1 om det uppstår en overflow i operationen, dvs om resultatet är utanför området för möjliga 8-bitars tal (-128 till 127). I detta fall                 finns det ingen overflow, så V = 0.
+C (Carry): C sätts till 1 om det uppstår en carry-out från det mest signifikanta bit-paret i operationen. Eftersom det inte finns någon carry-out i detta fall, är C = 0.
+
+SNZVC = 0 0 0 0 0.
 
 b) 126 + 2
+
+
+
 c) -90 - 30
 d) -90 - 40
 e) -5 +13
