@@ -1,0 +1,24 @@
+Svara på följande frågor:
+a) För ovanstående strukt num, på vilka minnesadresser ligger medlemmarna i relation till varandra? Ligger de bredvid
+varandra eller utspridda? Är ordningen slumpmässig eller är det samma som medlemmarna har deklarerats i
+struktdeklarationen? Ser du några likheter med arrayer i C?
+b) Vilken adress passeras vid anrop till funktionen subtract? Är det en slumpmässig adress eller är det adressen till någon
+av medlemmarna? Ser du även här någon likhet med arrayer?
+c) Vad tyckte du var lättast; passera referenser till tre separata variabler eller att passera en referens till ett objekt av
+strukten num? Redogör för ditt svar?
+
+
+a) Medlemmarna i strukten `num` ligger bredvid varandra i minnet i ordningen som deklarerades i struktdeklarationen. 
+Alltså kommer medlemmarna `x`, `y` och `z` ligga på minnesadresserna efter varandra. 
+Detta är liknande hur en array fungerar i C där elementen lagras bredvid 
+varandra i minnet och i samma ordning som deklarerats i arrayen.
+
+b) Vid anrop till funktionen `subtract` passeras en referens till ett objekt av strukten `num`. Adressen som passeras pekar
+på början av minnesområdet som innehåller hela `num`-strukturen. Det vill säga, adressen pekar på minnesadressen för medlemmen `x`.
+Detta liknar hur en array fungerar i C där namnet på en array i sig själv är en pekare till den första adressen i minnesområdet som innehåller hela arrayen.
+
+c) Att passera en referens till ett objekt av strukten `num` är lättare än att passera referenser till tre separata variabler.
+Det är så eftersom att passera en referens till objektet gör det möjligt att hantera alla tre medlemmar samtidigt med en enda pekare, 
+istället för att behöva använda flera olika pekare eller variabler för att hantera alla olika medlemmar.
+Detta gör koden lite lättare att läsa och förstå. Dessutom gör det det enklare att hantera en samling av 
+`num`-objekt, eftersom alla objekten kan hanteras på samma sätt.
